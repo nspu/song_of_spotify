@@ -4,6 +4,8 @@ Android app which use Spotify Sdk and [spotify-web-api-android](https://github.c
 
 Lets you enjoy the spotify music on your smartphone Android.
 
+
+
 ## Getting started
 
 To build this project, use "Import Project" in Android Studio or use the `./gradlew build` command.

@@ -21,7 +21,7 @@ import javax.security.auth.Destroyable;
 
 /**
  * Created by nspu on 02/03/18.
- * Bridge between the data and the view.
+ * Bridge between the data and the view.git
  */
 public class TrackItemRecyclerViewAdapter extends RecyclerView.Adapter<TrackItemRecyclerViewAdapter.TrackViewHolder> {
 
@@ -59,7 +59,7 @@ public class TrackItemRecyclerViewAdapter extends RecyclerView.Adapter<TrackItem
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
-        if ((currentTrack != null ? currentTrack.name.equals(track.getName()) : false)
+        if ((currentTrack != null && currentTrack.name.equals(track.getName()))
                 && currentTrack.albumName.equals(track.getAlbumName())) {
             holder.binding.setIsCurrent(true);
         } else {

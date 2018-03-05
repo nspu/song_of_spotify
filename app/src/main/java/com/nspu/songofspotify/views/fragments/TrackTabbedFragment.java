@@ -30,6 +30,7 @@ import java.util.List;
  * Created by nspu on 02/03/18.
  *
  * This fragment display the tracks one by one. When you slide, emmit a signal to change the track with the new one.
+ * Pattern : MVVM
  */
 public class TrackTabbedFragment extends Fragment {
 

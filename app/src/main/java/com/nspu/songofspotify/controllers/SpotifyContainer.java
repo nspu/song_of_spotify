@@ -34,6 +34,8 @@ import static com.spotify.sdk.android.player.Metadata.Track;
  * <p>
  * SpotifyContainer class use the spotify sdk(Beta) for android and spotify-web-api-android(library to call REST API).
  * This allows to cover many situations easily.
+ * Keep all the buisness logic here to communicate with spotify is probably the best way because the SDK is still in beta
+ * and it will be the only file(or package) to change when it will evolve.
  */
 public class SpotifyContainer implements SpotifyPlayer.NotificationCallback, ConnectionStateCallback, Destroyable {
     private static SpotifyContainer ourInstance;
@@ -212,11 +214,6 @@ public class SpotifyContainer implements SpotifyPlayer.NotificationCallback, Con
                     @Override
                     public void success(Playlist playlist, Response response) {
                         mObservableCurrentPlayList.setValue(playlist);
-                        try {
-
-                        } catch (Throwable throwable) {
-                            throwable.printStackTrace();
-                        }
                     }
 
                     @Override
@@ -372,10 +369,6 @@ public class SpotifyContainer implements SpotifyPlayer.NotificationCallback, Con
                     e.printStackTrace();
                 }
             }
-
-
         }
-
     }
-
 }

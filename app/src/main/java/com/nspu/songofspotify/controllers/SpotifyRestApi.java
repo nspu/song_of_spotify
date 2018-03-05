@@ -28,6 +28,8 @@ import kaaes.spotify.webapi.android.models.Image;
  * Created by nspu on 04/03/18.
  * <p>
  * The SpotifyRestApi class call spotify api (REST).
+ * It's just an exemple to use AsyncTask and .
+ * The best way is to use library like Retrofit to have a consise code.
  */
 public class SpotifyRestApi {
     private static final String API_URI = "https://api.spotify.com/v1";

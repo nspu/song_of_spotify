@@ -37,6 +37,7 @@ import retrofit.client.Response;
  * Created by nspu on 02/03/18.
  *
  * A fragment representing a list of tracks.
+ * Pattern : MVC
  */
 public class TrackListFragment extends Fragment {
     public static final String TAG = "TrackListFragment";
