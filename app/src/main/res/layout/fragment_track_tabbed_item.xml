@@ -1,0 +1,61 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.nspu.songofspotify.views.fragments.TrackTabbedFragment$PlaceholderFragment">
+
+    <data>
+        <variable
+            name="imageURI"
+            type="String" />
+
+        <variable
+            name="position"
+            type="String"/>
+
+        <variable
+            name="track"
+            type="com.nspu.songofspotify.models.CustomTrack"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_slash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/_0_0"
+                android:text="@{position}" />
+
+        <ImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:contentDescription="@string/cover"
+            android:gravity="center"
+            android:src="@android:color/black"
+            android:layout_weight="1"
+            app:imageUrl="@{imageURI}"
+             />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/title" />
+
+        <TextView
+            android:id="@+id/tv_artist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/artist" />
+
+    </LinearLayout>
+
+
+</layout>

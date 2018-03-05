@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="track"
+            type="com.nspu.songofspotify.models.CustomTrack" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="isCurrent"
+            type="boolean" />
+
+        <variable
+            name="callback"
+            type="com.nspu.songofspotify.views.callbacks.CustomTrackClickCallback" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="@{()->callback.onClick(track, position)}"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_item_track"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_cover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cover"
+                android:layout_marginEnd="12dp"
+                app:imageUrl="@{imageUrl}"
+                 />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/play_button"
+                        android:visibility="gone"
+                        app:srcCompat="@android:drawable/ic_media_play"
+                        app:visibleGone="@{isCurrent}"
+                         />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:hint="@string/_0"
+                        android:text="@{Integer.toString(position+1)}" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:text="@{track.name}"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/tv_artist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="@{track.artists}"
+                    android:textColor="@android:color/darker_gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</layout>
+

@@ -1,0 +1,121 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isPlaying"
+            type="boolean" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
+        tools:context="com.nspu.songofspotify.views.fragments.ControllerTrackFragment">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_controller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btn_previous"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_button"
+                    android:layout_marginBottom="@dimen/margin_button"
+                    android:layout_weight="1"
+                    android:background="@android:color/black"
+                    android:contentDescription="@string/previous_button"
+                    android:src="@android:drawable/ic_media_previous" />
+
+                <ImageButton
+                    android:id="@+id/btn_play_pause"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_button"
+                    android:layout_marginBottom="@dimen/margin_button"
+                    android:layout_weight="1"
+                    android:background="@android:color/black"
+                    android:contentDescription="@string/pause_button"
+                    android:src="@android:drawable/ic_media_pause"
+                    app:playPause="@{isPlaying}" />
+
+                <ImageButton
+                    android:id="@+id/btn_stop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_button"
+                    android:layout_marginBottom="@dimen/margin_button"
+                    android:contentDescription="@string/stop_button"
+                    android:layout_weight="1"
+                    android:background="@android:color/black"
+                    android:src="@android:drawable/checkbox_off_background" />
+
+                <ImageButton
+                    android:id="@+id/btn_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_button"
+                    android:layout_marginBottom="@dimen/margin_button"
+                    android:contentDescription="@string/next_button"
+                    android:layout_weight="1"
+                    android:background="@android:color/black"
+                    android:src="@android:drawable/ic_media_next"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ll_controller">
+
+                <TextView
+                    android:id="@+id/tv_time_postion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:text="@string/_00_00_00" />
+
+                <SeekBar
+                    android:id="@+id/sb_time"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:thumb="@android:color/darker_gray" />
+
+
+                <TextView
+                    android:id="@+id/tv_time_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center"
+                    android:text="@string/_00_00_00" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/title"
+                app:layout_constraintTop_toBottomOf="@+id/ll_time" />
+        </android.support.constraint.ConstraintLayout>
+    </FrameLayout>
+</layout>

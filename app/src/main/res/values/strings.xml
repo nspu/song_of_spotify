@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SongOfSpotify</string>
+    <string name="artist">Artist</string>
+    <string name="previous_button">Previous Button</string>
+    <string name="pause_button">Pause Button</string>
+    <string name="stop_button">Stop Button</string>
+    <string name="next_button">Next Button</string>
+    <string name="_00_00_00">00:00:00</string>
+    <string name="title">Title</string>
+    <string name="play_button">Play Button</string>
+    <string name="_0">0</string>
+    <string name="_0_0">0/0</string>
+    <string name="cover">Cover</string>
+</resources>
