@@ -4,8 +4,7 @@ Android app which use Spotify Sdk and [spotify-web-api-android](https://github.c
 ==================================
 
 Lets you enjoy the spotify music on your Android smartphone.
-
-
+Log in with your Spotify Premium account credentials. It won’t work with a free account.
 
 ## Getting started
 
